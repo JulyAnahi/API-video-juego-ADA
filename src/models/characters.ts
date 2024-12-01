@@ -1,16 +1,20 @@
-export class Item {
-    constructor(public name: string, public quantity: number) {}
-  }
-  
+
+import { Enemy } from "./enemy";
+import { Item } from "./items";
+import { Mission } from "./mission";
+
   export class Character {
-    private inventory: Item[] = [];
+    private name: string;
+    private level: number;
+    private health: number;
+    private experience: number;
   
-    constructor(
-      private name: string,
-      private level: number,
-      private health: number,
-      private experience: number
-    ) {}
+    constructor(name: string, level: number, health: number, experience: number) {
+      this.name = name;
+      this.level = level;
+      this.health = health;
+      this.experience = experience;
+    }
   
     // Getters y Setters
     getName(): string {
@@ -24,7 +28,11 @@ export class Item {
     getHealth(): number {
       return this.health;
     }
-  
+
+    reduceHealth(damage: number): void {
+      this.health = Math.max(0, this.health - damage);
+    }
+
     getExperience(): number {
       return this.experience;
     }
@@ -32,24 +40,42 @@ export class Item {
     setHealth(health: number): void {
       this.health = health;
     }
-  
-    addExperience(points: number): void {
-      this.experience += points;
-      console.log(`${this.name} ha ganado ${points} puntos de experiencia.`);
-    }
-  
-    // Métodos adicionales
-    addItem(item: Item): void {
-      this.inventory.push(item);
-      console.log(`${this.name} ha recibido el objeto: ${item.name}`);
-    }
-  
-    attack(target: Character, damage: number): void {
-      console.log(`${this.name} ataca a ${target.getName()} y causa ${damage} de daño.`);
-      target.setHealth(target.getHealth() - damage);
-      if (target.getHealth() <= 0) {
-        console.log(`${target.getName()} ha sido derrotado.`);
+    
+    gainExperience(exp: number): void {
+      this.experience += exp;
+      console.log(`${this.name} gana ${exp} puntos de experiencia.`);
+      
+      if (this.experience >= this.level * 100) {
+        this.levelUp();
       }
     }
-  }
+    
+    levelUp(): void {
+      this.level++;
+      this.health += 20; // Incrementa salud máxima al subir de nivel
+      console.log(`${this.getName()} sube al nivel ${this.getLevel()}! 🎉 Salud incrementada a ${this.getHealth()}.`);
+    }
   
+    gainReward(mission:Mission):void{
+
+      console.log(` ${this.getName()} ha recibido ${mission.getReward()} puntos de recompensa por su victoria 🏆!`)
+    }
+   attack( enemy: Enemy, item: Item): void {
+
+    if (this.getHealth() <= 0) {
+      console.log(`${this.name} no puede atacar porque está fuera de combate.`);
+      return;
+    }
+  
+    if (enemy.getHealth() <= 0) {
+      console.log(`${enemy.getName()} ya ha sido derrotado.`);
+      return;
+    }
+    console.log(`${this.getName()} utiliza ${item.getname()} para atacar a su enemigo el ${enemy.getName()}`)
+    // reduce la salud del enemigo
+      enemy.reduceHealth(item.getPower());
+
+      }
+
+  }
+ 

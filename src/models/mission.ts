@@ -1,3 +1,4 @@
+import { Character } from "./characters";
 export enum MissionType {
     Main = "Main",
     Side = "Side",
@@ -12,16 +13,18 @@ export enum MissionType {
       public type: MissionType
     ) {}
   
-    getDescription(): string {
-      return this.description;
-    }
-  
-    getDifficulty(): number {
-      return this.difficulty;
-    }
-  
-    getReward(): number {
-      return this.reward;
-    }
+  getDescription() :string{
+    return this.description
   }
+  
+  getReward():number{
+    return this.reward;
+  }
+  get typeMision():MissionType{
+    return this.type;
+  }
+  
+  
+  }
+
   
