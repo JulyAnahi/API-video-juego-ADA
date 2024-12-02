@@ -14,9 +14,9 @@ export async function startGame(): Promise <void> {
     console.log("5. Listar misiones");
     console.log("6. Crear enemigo");
     console.log("7. Listar enemigos");
-    console.log("8. Atacar enemigo");
-    console.log("9. Crear inventario");
-    console.log('10. Listar inventario');
+    console.log("8. Crear inventario");
+    console.log('9. Listar inventario');
+    console.log("10. Atacar enemigo");
     console.log("0. Salir");
 
     option = parseInt(readlineSync.question("\nSeleccione una opcion: "), 10);
@@ -44,13 +44,13 @@ export async function startGame(): Promise <void> {
         handleListEnemies();
         break;
       case 8:
-       await handleAttackEnemy();
-        break;
-      case 9:
         handleCreateInventory();
         break;
-      case 10:
+      case 9:
         handledListInventory();
+        break;
+      case 10:
+        await handleAttackEnemy();
         break;
       case 0:
         console.log("Saliendo del juego...");

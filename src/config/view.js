@@ -25,9 +25,9 @@ function startGame() {
             console.log("5. Listar misiones");
             console.log("6. Crear enemigo");
             console.log("7. Listar enemigos");
-            console.log("8. Atacar enemigo");
-            console.log("9. Crear inventario");
-            console.log('10. Listar inventario');
+            console.log("8. Crear inventario");
+            console.log('9. Listar inventario');
+            console.log("10. Atacar enemigo");
             console.log("0. Salir");
             option = parseInt(readlineSync.question("\nSeleccione una opcion: "), 10);
             switch (option) {
@@ -53,13 +53,13 @@ function startGame() {
                     handleListEnemies();
                     break;
                 case 8:
-                    yield handleAttackEnemy();
-                    break;
-                case 9:
                     handleCreateInventory();
                     break;
-                case 10:
+                case 9:
                     handledListInventory();
+                    break;
+                case 10:
+                    yield handleAttackEnemy();
                     break;
                 case 0:
                     console.log("Saliendo del juego...");

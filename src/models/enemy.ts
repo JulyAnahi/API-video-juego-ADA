@@ -32,7 +32,7 @@ export class Enemy {
         console.log(`El personaje ${character.getName()} ha sido derrotado!!!`);
       }
       
-      console.log( `${this.getName()} contraataca con ${this.getPower()} 💪💪💪🤙`);
+      console.log( `${this.getName()} contraataca con ${this.getPower()} 💪💪💪🤙 de poder!`);
       character.reduceHealth(this.power);
     }
 

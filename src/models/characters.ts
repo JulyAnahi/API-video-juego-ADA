@@ -58,7 +58,7 @@ import { Mission } from "./mission";
   
     gainReward(mission:Mission):void{
 
-      console.log(` ${this.getName()} ha recibido ${mission.getReward()} puntos de recompensa por su victoria 🏆!`)
+      console.log(`${this.getName()} ha recibido ${mission.getReward()} puntos de recompensa por su victoria 🏆!`)
     }
    attack( enemy: Enemy, item: Item): void {
 

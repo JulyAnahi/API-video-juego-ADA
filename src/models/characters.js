@@ -40,7 +40,7 @@ class Character {
         console.log(`${this.getName()} sube al nivel ${this.getLevel()}! 🎉 Salud incrementada a ${this.getHealth()}.`);
     }
     gainReward(mission) {
-        console.log(` ${this.getName()} ha recibido ${mission.getReward()} puntos de recompensa por su victoria 🏆!`);
+        console.log(`${this.getName()} ha recibido ${mission.getReward()} puntos de recompensa por su victoria 🏆!`);
     }
     attack(enemy, item) {
         if (this.getHealth() <= 0) {
