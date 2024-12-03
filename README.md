@@ -21,11 +21,11 @@
 
 ### Configuración del entorno
     Instalar las dependencias con:
-        Previamente tener instalado nodeJS.
         Inicializar Node con npm init -y
         Instalar TypeScript con(local) npm install typescript --save-dev.
         Generar tsconfig.json con npx tsc --init.
         Instalar readline-sync npm install readline-sync  para TypeScript npm install --save-dev @types/readline-sync
+   
     Configurar package.json:
         "scripts":{
         "start": "ts-node src/index.ts",
@@ -33,6 +33,8 @@
         "run": "node dist/index.js",
         "clean": "rimraf dist"
         }
+> [!WARNING]
+> Es nesesario tener NodeJS instalado previamente
 
 ## Ejecutar
     Para compilar y ejecutar el proyecto: 
