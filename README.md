@@ -41,16 +41,17 @@
 ## Estructura
 
 API PARA UN VIDEO JUEGO:
+
 API PARA UN VIDEO JUEGO
-├── node_modules
-├── src
-│   ├── config
-│   ├── controllers
-│   └── models
-├── index.ts
-├── package.json
-├── README.md
-└── tsconfig.json
+-├── node_modules
+-├── src
+-│   ├── config
+-│   ├── controllers
+-│   └── models
+-├── index.ts
+-├── package.json
+-├── README.md
+-└── tsconfig.json
 
 ## Uso
     
