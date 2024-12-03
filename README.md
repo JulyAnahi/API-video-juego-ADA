@@ -90,8 +90,9 @@
         --- MENÚ PRINCIPAL ---
         0. Salir
 
-        > ­-[!IMPORTANT]-
-        > Asegurate siempre de que los personajes seleccionados para la battalla tengan vida.
+        > [!IMPORTANT]
+> Asegurate siempre de que los personajes seleccionados para la battalla tengan vida.
+        
 
 ## Funciones principales
 
