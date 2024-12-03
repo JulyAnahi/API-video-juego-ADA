@@ -16,7 +16,7 @@
 
     
 ## Instalación
-    cd /ruta/donde/quieres/guardar
+    
     git clone https://github.com/JulyAnahi/API-video-juego-ADA.git
 
 ### Configuración del entorno
