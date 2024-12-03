@@ -40,7 +40,6 @@
 
 ## Estructura
 
-#API PARA UN VIDEO JUEGO:
 
     API PARA UN VIDEO JUEGO
     ├── node_modules
